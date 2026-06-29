@@ -1,0 +1,37 @@
+image: maven:3.9-eclipse-temurin-21
+
+stages:
+  - test
+  - report
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository
+
+test:
+  stage: test
+  script:
+    - mvn -B clean test
+  artifacts:
+    when: always
+    paths:
+      - target/surefire-reports/
+      - target/allure-results/
+    reports:
+      junit: target/surefire-reports/TEST-*.xml
+    expire_in: 7 days
+
+allure-report:
+  stage: report
+  script:
+    - mvn -B allure:report
+  artifacts:
+    when: always
+    paths:
+      - target/site/allure-maven-plugin/
+    expire_in: 7 days
+  needs:
+    - test

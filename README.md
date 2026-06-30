@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Desafio Sicredi QE — Automação de API DummyJSON
 
 Projeto de automação de testes de API desenvolvido para o **Desafio Técnico Sicredi Quality Engineer**, cobrindo o gerenciamento de produtos eletrônicos na API pública [DummyJSON](https://dummyjson.com).
@@ -240,3 +241,6 @@ O arquivo `.gitlab-ci.yml` executa:
 ## Autor
 
 Desafio técnico — Sicredi Quality Engineer
+=======
+# desafio-sicredi-qe
+>>>>>>> 152777e92fb5cf47267d9ba8f543f45eb828f95f

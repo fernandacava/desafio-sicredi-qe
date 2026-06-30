@@ -58,7 +58,7 @@ class AuthProductsTest extends BaseTest {
 void shouldRejectInvalidToken() {
     authClient.getAuthProducts(TokenManager.INVALID_TOKEN)
             .then()
-            .statusCode(500);
+            .statusCode(401);
 }
 
     @Test

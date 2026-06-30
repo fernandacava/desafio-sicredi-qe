@@ -26,7 +26,7 @@ class ProductCreateTest extends BaseTest {
 
         var created = productClient.addProduct(request)
                 .then()
-                .statusCode(200)
+                .statusCode(201)
                 .body("id", notNullValue())
                 .body("title", notNullValue())
                 .extract()
@@ -45,7 +45,7 @@ class ProductCreateTest extends BaseTest {
     void shouldSimulateCreationWithEmptyPayload() {
         var created = productClient.addProduct(TestDataFactory.emptyProductPayload())
                 .then()
-                .statusCode(200)
+                .statusCode(201)
                 .body("id", notNullValue())
                 .extract()
                 .as(Product.class);
@@ -62,7 +62,7 @@ class ProductCreateTest extends BaseTest {
 
         var created = productClient.addProduct(request)
                 .then()
-                .statusCode(200)
+                .statusCode(201)
                 .extract()
                 .as(Product.class);
 
@@ -76,7 +76,7 @@ class ProductCreateTest extends BaseTest {
     void shouldHandleInvalidPayloadTypes() {
         productClient.addProduct(TestDataFactory.invalidProductPayload())
                 .then()
-                .statusCode(200)
+                .statusCode(201)
                 .body("id", notNullValue());
     }
 }

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Desafio Sicredi QE — Automação de API DummyJSON
+# desafio-sicredi-qe
 
 Projeto de automação de testes de API desenvolvido para o **Desafio Técnico Sicredi Quality Engineer**, cobrindo o gerenciamento de produtos eletrônicos na API pública [DummyJSON](https://dummyjson.com).
 
